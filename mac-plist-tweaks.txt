@@ -26,3 +26,12 @@ defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES
 
 # Enable AirDrop over Ethernet
 defaults write com.apple.NetworkBrowser BrowseAllInterfaces 1 
+
+###########################################
+# Power Related Items
+###########################################
+
+# Fix the slow-to-wake issue (standy mode)
+# Note: default is 1 hour
+# Check current settings with pmset -g
+sudo pmset -a standbydelay 86400
