@@ -20,6 +20,9 @@ defaults write com.apple.Finder AppleShowAllFiles -bool true
 # Show path in Title Bar
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES
 
+# Show the ~/Library folder
+chflags nohidden ~/Library
+
 ###########################################
 # Lion Tweaks
 ###########################################
