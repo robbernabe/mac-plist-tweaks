@@ -1,4 +1,4 @@
 mac-plist-tweaks
 ================
 
-Mac tweaks via plist files
+Mac tweaks via plist files and other Terminal commands.
