@@ -8,6 +8,8 @@ defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebK
 # Disable Notification Center
 launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist ; killall NotificationCenter
 
+# Disable auto-rearranging of spaces
+defaults write com.apple.dock.plist mru-spaces -boolean NO
 
 ###########################################
 # Finder 
