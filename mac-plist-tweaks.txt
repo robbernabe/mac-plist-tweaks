@@ -49,3 +49,11 @@ defaults write com.apple.NetworkBrowser BrowseAllInterfaces 1
 # Note: default is 1 hour
 # Check current settings with pmset -g
 sudo pmset -a standbydelay 86400
+
+###########################################
+# iTerm2 Tweaks
+###########################################
+
+# Fix the scroll to top bug (where it jumps immediately back to bottom of screen)
+# Be sure to restart iTerm2 after running this.
+defaults write com.googlecode.iterm2 NSScrollAnimationEnabled -bool NO
