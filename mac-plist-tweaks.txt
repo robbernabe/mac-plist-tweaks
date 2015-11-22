@@ -2,17 +2,11 @@
 # Mountain Lion Tweaks
 ###########################################
 
-# Re-enable backspace/delete to go back in Safari 6
+# Re-enable backspace/delete to go back in Safari
 defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2BackspaceKeyNavigationEnabled -bool YES
 
-# Disable Notification Center
-launchctl unload -w /System/Library/LaunchAgents/com.apple.notificationcenterui.plist ; killall NotificationCenter
-
-# Disable auto-rearranging of spaces
-defaults write com.apple.dock.plist mru-spaces -boolean NO
-
 ###########################################
-# Finder 
+# Finder
 ###########################################
 
 # Use list view in all Finder windows by default
@@ -34,21 +28,21 @@ defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES
 # Show the ~/Library folder
 chflags nohidden ~/Library
 
+# Show the path bar
+defaults write com.apple.finder ShowPathBar -boolean true
+
+# Set sidebar icon size to Small
+defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 1
+
+# Scrollbar fix for finder and Terminal
+defaults write -g AppleShowScrollBars -string WhenScrolling
+
 ###########################################
-# Lion Tweaks
+# Networking
 ###########################################
 
 # Enable AirDrop over Ethernet
-defaults write com.apple.NetworkBrowser BrowseAllInterfaces 1 
-
-###########################################
-# Power Related Items
-###########################################
-
-# Fix the slow-to-wake issue (standy mode)
-# Note: default is 1 hour
-# Check current settings with pmset -g
-sudo pmset -a standbydelay 86400
+defaults write com.apple.NetworkBrowser BrowseAllInterfaces 1
 
 ###########################################
 # iTerm2 Tweaks
