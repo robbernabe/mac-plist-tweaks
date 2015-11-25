@@ -1,13 +1,13 @@
-###########################################
-# Mountain Lion Tweaks
-###########################################
+###############################################################################
+# Safari                                                                      #
+###############################################################################
 
 # Re-enable backspace/delete to go back in Safari
 defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2BackspaceKeyNavigationEnabled -bool YES
 
-###########################################
-# Finder
-###########################################
+###############################################################################
+# Finder                                                                      #
+###############################################################################
 
 # Use list view in all Finder windows by default
 # Four-letter codes for the other view modes: `icnv`, `clmv`, `Flwv`
@@ -25,6 +25,9 @@ defaults write com.apple.Finder AppleShowAllFiles -bool true
 # Show path in Title Bar
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool YES
 
+# New window points to home
+defaults write com.apple.finder NewWindowTarget -string "PfHm"
+
 # Show the ~/Library folder
 chflags nohidden ~/Library
 
@@ -37,17 +40,50 @@ defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 1
 # Scrollbar fix for finder and Terminal
 defaults write -g AppleShowScrollBars -string WhenScrolling
 
-###########################################
-# Networking
-###########################################
+###############################################################################
+# Networking                                                                  #
+###############################################################################
 
 # Enable AirDrop over Ethernet
 defaults write com.apple.NetworkBrowser BrowseAllInterfaces 1
 
-###########################################
-# iTerm2 Tweaks
-###########################################
+###############################################################################
+# iTerm2 Tweaks                                                               #
+###############################################################################
 
 # Fix the scroll to top bug (where it jumps immediately back to bottom of screen)
 # Be sure to restart iTerm2 after running this.
 defaults write com.googlecode.iterm2 NSScrollAnimationEnabled -bool NO
+
+###############################################################################
+# Power                                                                       #
+###############################################################################
+
+# Put the hard disk(s) to sleep when possible: Disabled
+/usr/bin/sudo /usr/bin/pmset -b disksleep 0
+
+###############################################################################
+# Dock, Dashboard, and hot corners                                            #
+###############################################################################
+
+# Hot corners
+# Possible values:
+#  0: no-op
+#  2: Mission Control
+#  3: Show application windows
+#  4: Desktop
+#  5: Start screen saver
+#  6: Disable screen saver
+#  7: Dashboard
+# 10: Put display to sleep
+# 11: Launchpad
+# 12: Notification Center
+
+# Note: Be sure to run `killall Dock` for these settings to take effect
+
+# Bottom left screen corner → Start screen saver
+defaults write com.apple.dock wvous-bl-corner -int 5
+defaults write com.apple.dock wvous-bl-modifier -int 0
+
+# Disable mouse pointer "shake to locate"
+defaults write ~/Library/Preferences/.GlobalPreferences CGDisableCursorLocationMagnification -bool YES
