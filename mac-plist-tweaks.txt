@@ -56,8 +56,14 @@ defaults write com.googlecode.iterm2 NSScrollAnimationEnabled -bool NO
 # Power                                                                       #
 ###############################################################################
 
-# Put the hard disk(s) to sleep when possible: Disabled
-/usr/bin/sudo /usr/bin/pmset -b disksleep 0
+# Disable Mac from sleeping entirely
+/usr/bin/sudo /usr/bin/pmset -a sleep 0
+
+# Put the hard disk(s) to sleep when possible: Disabled when on battery or not
+/usr/bin/sudo /usr/bin/pmset -a disksleep 0
+
+# Put display to sleep after 10 minutes
+/usr/bin/sudo /usr/bin/pmset -a displaysleep 10
 
 ###############################################################################
 # Dock, Dashboard, and hot corners                                            #
