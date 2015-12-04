@@ -6,6 +6,13 @@
 defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2BackspaceKeyNavigationEnabled -bool YES
 
 ###############################################################################
+# Chrome
+###############################################################################
+
+# Disable swipe to to navigate
+defaults write com.google.Chrome.plist AppleEnableSwipeNavigateWithScrolls -bool FALSE
+
+###############################################################################
 # Finder                                                                      #
 ###############################################################################
 
@@ -36,6 +43,14 @@ defaults write NSGlobalDomain NSTableViewDefaultSizeMode -int 1
 
 # Scrollbar fix for finder and Terminal
 defaults write -g AppleShowScrollBars -string WhenScrolling
+
+# Expand save panel by default
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode2 -bool true
+
+# Expand print panel by default
+defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
+defaults write NSGlobalDomain PMPrintingExpandedStateForPrint2 -bool true
 
 ###############################################################################
 # Networking                                                                  #
