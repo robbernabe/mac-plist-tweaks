@@ -6,6 +6,13 @@
 defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2BackspaceKeyNavigationEnabled -bool YES
 
 ###############################################################################
+# Mail
+###############################################################################
+
+# Disable inline attachments (just show the icons)
+defaults write com.apple.mail DisableInlineAttachmentViewing -bool true
+
+###############################################################################
 # Chrome
 ###############################################################################
 
